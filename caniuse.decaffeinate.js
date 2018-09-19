@@ -89,7 +89,10 @@ const {
   agents
 } = data;
 
-const xwrap = linewrap((process.stdout.columns || 80), {
+const numColumns = (typeof argv.columns === "number")
+  ? argv.columns
+  : process.stdout.columns || 80;
+const xwrap = linewrap(numColumns, {
   skipScheme: 'ansi-color',
   whitespace: 'line',
   tabWidth: 2,

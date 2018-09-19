@@ -77,5 +77,9 @@ module.exports = yargs
     type: 'string',
     default: path.join(osHomedir(), '.caniuse.json'),
     describe: "Specify a config file with default options"
+  }).option('columns', {
+    type: 'number',
+    default: 80,
+    describe: "Maximum columns to print. 0 (zero) means no wrapping"
   }).config('config')
   .help('help');
